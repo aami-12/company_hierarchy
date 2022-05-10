@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/company_hierarchy/static/css/main.3dbf242a.css",
+    "main.js": "/company_hierarchy/static/js/main.2277239f.js",
+    "index.html": "/company_hierarchy/index.html",
+    "main.3dbf242a.css.map": "/company_hierarchy/static/css/main.3dbf242a.css.map",
+    "main.2277239f.js.map": "/company_hierarchy/static/js/main.2277239f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dbf242a.css",
+    "static/js/main.2277239f.js"
+  ]
+}
