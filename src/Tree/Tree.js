@@ -73,5 +73,6 @@ const TreeRecusive = ({ data, parentNode }) => {
 
 Tree.File = File;
 Tree.Folder = Folder;
+Tree.Value = Value;
 
 export default Tree;

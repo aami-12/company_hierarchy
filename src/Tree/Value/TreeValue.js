@@ -5,9 +5,8 @@ import { StyledFile } from "../Value/TreeValue.style";
 import { useTreeContext } from "../state/TreeContext";
 import { ActionsWrapper, StyledName } from "../Tree.style";
 import { PlaceholderInput } from "../TreePlaceholderInput";
+import { VALUE } from "../state/constants";
 
-import { FILE } from "../state/constants";
-import FILE_ICONS from "../FileIcons";
 
 const Value = ({ name, id, node }) => {
   const { dispatch, isImparative, onNodeClick } = useTreeContext();
@@ -19,11 +18,11 @@ const Value = ({ name, id, node }) => {
 
   const toggleEditing = () => setEditing(!isEditing);
   const commitEditing = (name) => {
-    dispatch({ type: FILE.EDIT, payload: { id, name } });
+    dispatch({ type: VALUE.EDIT, payload: { id, name } });
     setEditing(false);
   };
   const commitDelete = () => {
-    dispatch({ type: FILE.DELETE, payload: { id } });
+    dispatch({ type: VALUE.DELETE, payload: { id } });
   };
   const handleNodeClick = React.useCallback(
     (e) => {
@@ -49,11 +48,7 @@ const Value = ({ name, id, node }) => {
       ) : (
         <ActionsWrapper>
           <StyledName>
-            {FILE_ICONS[ext.current] ? (
-              FILE_ICONS[ext.current]
-            ) : (
               <AiOutlineFileAdd />
-            )}
             &nbsp;&nbsp;{name}
           </StyledName>
           {isImparative && (

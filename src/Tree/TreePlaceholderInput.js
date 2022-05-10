@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { v4 } from "uuid";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import FILE_ICONS from "./FileIcons";
+
 import { StyledFile } from "../Tree/File/TreeFile.style";
 import { FolderName } from "../Tree/Folder/TreeFolder";
 import { StyledFolder } from "../Tree/Folder/TreeFolder.style";
 
 const FileEdit = ({ ext, inputRef, updateExt, defaultValue, style }) => {
-  const extension = FILE_ICONS[ext] ? FILE_ICONS[ext] : <AiOutlineArrowRight />;
+  const extension = <AiOutlineArrowRight />;
 
   return (
     <StyledFile className="tree__file" style={style}>

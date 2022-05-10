@@ -7,7 +7,6 @@ import {
   AiOutlineDelete,
   AiOutlineEdit,
 } from "react-icons/ai";
-
 import {
   ActionsWrapper,
   Collapse,
@@ -16,7 +15,7 @@ import {
 } from "../Tree.style";
 import { StyledFolder } from "./TreeFolder.style";
 
-import { FILE, FOLDER, VALUE } from "../state/constants";
+import { FILE, FOLDER } from "../state/constants";
 import { useTreeContext } from "../state/TreeContext";
 import { PlaceholderInput } from "../TreePlaceholderInput";
 
@@ -44,9 +43,7 @@ const Folder = ({ id, name, children, node }) => {
     dispatch({ type: FILE.CREATE, payload: { id, name } });
   };
 
-  const commitValueCreation = (name) => {
-    dispatch({ type: VALUE.CREATE, payload: { id, name } });
-  };
+  
   const commitDeleteFolder = () => {
     dispatch({ type: FOLDER.DELETE, payload: { id } });
   };
@@ -81,18 +78,7 @@ const Folder = ({ id, name, children, node }) => {
     ]);
   };
 
-   const handleValueCreation = (event) => {
-    event.stopPropagation();
-    setIsOpen(true);
-    setChilds([
-      ...childs,
-      <PlaceholderInput
-        type="value"
-        onSubmit={commitValueCreation}
-        onCancel={handleCancel}
-      />,
-    ]);
-  };
+
 
   const handleFolderCreation = (event) => {
     event.stopPropagation();

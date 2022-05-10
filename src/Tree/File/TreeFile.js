@@ -7,7 +7,7 @@ import { ActionsWrapper, StyledName } from "../Tree.style";
 import { PlaceholderInput } from "../TreePlaceholderInput";
 
 import { FILE } from "../state/constants";
-import FILE_ICONS from "../FileIcons";
+
 
 const File = ({ name, id, node }) => {
   const { dispatch, isImparative, onNodeClick } = useTreeContext();
@@ -49,11 +49,7 @@ const File = ({ name, id, node }) => {
       ) : (
         <ActionsWrapper>
           <StyledName>
-            {FILE_ICONS[ext.current] ? (
-              FILE_ICONS[ext.current]
-            ) : (
               <AiOutlineFile />
-            )}
             &nbsp;&nbsp;{name}
           </StyledName>
           {isImparative && (
